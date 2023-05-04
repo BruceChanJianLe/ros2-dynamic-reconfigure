@@ -32,9 +32,16 @@ def generate_launch_description():
             parameters=[os.path.join(get_package_share_directory('ros2-dynamic-reconfigure'), 'config', 'params.yaml')],
         )
 
+        dyn_recof_node = Node(
+            package='rqt_reconfigure',
+            executable='rqt_reconfigure',
+            name='rqt_reconfigure_node',
+        )
+
         # Define launch description
         ld = LaunchDescription(ARGUMENTS)
         ld.add_action(talker_node)
+        ld.add_action(dyn_recof_node)
 
         # Return launch description
         return ld
