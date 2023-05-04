@@ -1,0 +1,6 @@
+dyn_reconf_node:
+  ros__parameters:
+    data: 0
+    rate: 1
+    namespace1:
+      data: 4
