@@ -75,30 +75,30 @@ namespace dynamic_reconfigure
         switch (type)
         {
         case rclcpp::ParameterType::PARAMETER_DOUBLE:
-          if (name == "a_double")
+          if (name.compare("a_double") == 0)
             this->a_double = parameter.as_double();
           else
             unknown_param = true;
           break;
 
         case rclcpp::ParameterType::PARAMETER_STRING:
-          if (name == "a_string")
+          if (name.compare("a_string") == 0)
             this->a_string = parameter.as_string();
           else
             unknown_param = true;
           break;
 
         case rclcpp::ParameterType::PARAMETER_BOOL:
-          if (name == "a_bool")
+          if (name.compare("a_bool") == 0)
             this->a_bool = parameter.as_bool();
           else
             unknown_param = true;
           break;
 
         case rclcpp::ParameterType::PARAMETER_INTEGER:
-          if (name == "data")
+          if (name.compare("data") == 0)
             this->data_ = parameter.as_int();
-          if (name == "namespace1.data")
+          if (name.compare("namespace1.data") == 0)
             this->ns_data_ = parameter.as_int();
           else
             unknown_param = true;
