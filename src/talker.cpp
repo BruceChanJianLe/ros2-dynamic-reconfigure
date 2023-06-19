@@ -61,7 +61,7 @@ namespace dynamic_reconfigure
     try
     {
       // Update parameters
-      for (auto parameter : parameters)
+      for (auto &&parameter : parameters)
       {
         const auto &type = parameter.get_type();
         const auto &name = parameter.get_name();
